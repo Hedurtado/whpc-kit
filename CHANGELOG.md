@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.0.0] - 2026-07-02
+
+### Added
+
+- public `v1.0.0` package metadata and documentation cleanup;
+- companion-checkout full reproduction entry points for `FP3`, `FP4`, and `FP5`;
+- public-facing reproducibility documentation for the native `FP1-FP2` and companion `FP3-FP5` split.
+
+### Changed
+
+- repository presentation was simplified for public release;
+- internal release-checklist files were removed from the public tree;
+- README now presents the package, reproducibility model, and repository layout more directly.
+
+## [0.4.0] - 2026-07-02
+
+### Added
+
+- frozen `FP5` orchestration for `M5`, covering Part 9 explainability and Part 10 robustness through the companion `W-HPC` checkout.
+
+## [0.3.0] - 2026-07-02
+
+### Added
+
+- frozen `FP4` orchestration for `M4`, covering Part 7 open-world evaluation and Part 8 query-feedback and guarded retraining through the companion `W-HPC` checkout.
+
+## [0.2.0] - 2026-07-02
+
+### Added
+
+- frozen `FP3` orchestration for `M3`, covering Part 5 online streaming and Part 6 drift-aware evaluation through the companion `W-HPC` checkout.
+
 ## [0.1.0] - 2026-07-02
 
 ### Added
