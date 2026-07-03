@@ -5,24 +5,27 @@
   "version_scope": "v0.2",
   "focus": [
     "compute_block_drift_signals",
-    "evaluate_drift_alarm"
+    "evaluate_drift_alarm",
+    "frozen M3 companion-checkout orchestration"
   ],
-  "supported_modes": ["smoke"],
-  "planned_modes": ["full"],
+  "supported_modes": ["smoke", "full"],
   "smoke_command": "python3 reproducibility/fp3_online_drift.py --mode smoke",
-  "full_command": "pending",
+  "full_command": "python3 reproducibility/fp3_online_drift.py --mode full --research-root ../W-HPC [--datasets cic-ids2017 unsw-nb15 nsl-kdd]",
   "datasets": {
     "smoke": ["synthetic_stream_block"],
     "full": ["CIC-IDS2017", "UNSW-NB15", "NSL-KDD"]
   },
   "expected_outputs": [
-    "reproducibility/artifacts/fp3_smoke_summary.json"
+    "reproducibility/artifacts/fp3_smoke_summary.json",
+    "reproducibility/artifacts/fp3_full_summary.json"
   ],
   "manuscript_targets": [
     "M3 drift signal computation smoke validation",
-    "M3 drift alarm logic smoke validation"
+    "M3 drift alarm logic smoke validation",
+    "M3 frozen Part 5/Part 6 reproduction orchestration against the companion W-HPC checkout"
   ],
   "notes": [
-    "Smoke mode validates the drift-monitoring core without dataset-backed streaming protocols."
+    "Smoke mode validates the drift-monitoring core without dataset-backed streaming protocols.",
+    "Full mode replays the frozen M3 protocol by orchestrating the exact Part 5 and Part 6 experiment scripts from a local companion checkout at ../W-HPC."
   ]
 }
