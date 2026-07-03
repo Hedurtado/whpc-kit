@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package
+        run: python -m pip install -U pip && python -m pip install -e .[dev]
+
+      - name: Run core test suite
+        run: |
+          python -m pytest \
+            tests/test_public_api_smoke.py \
+            tests/test_scores.py \
+            tests/test_representatives.py \
+            tests/test_thresholds.py \
+            tests/test_weights.py \
+            tests/test_drift_monitoring.py \
+            tests/test_open_world.py \
+            tests/test_querying.py \
+            tests/test_selection.py \
+            tests/test_reports.py
+
+      - name: Run smoke example
+        run: python examples/smoke_synthetic.py
+
+      - name: Run reproducibility smoke scripts
+        run: |
+          python reproducibility/fp1_supervised_mm.py --mode smoke
+          python reproducibility/fp2_oneclass_adaptive.py --mode smoke
+          python reproducibility/fp3_online_drift.py --mode smoke
+          python reproducibility/fp4_openworld_uncertainty.py --mode smoke
+          python reproducibility/fp5_trustworthy.py --mode smoke

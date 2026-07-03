@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whpc-kit"
+version = "0.1.0"
+description = "Reusable W-HPC models and reproducibility utilities."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+repro = [
+    "pyarrow>=16.0",
+]
+explain = [
+    "lime>=0.2.0.1",
+    "shap>=0.52.0",
+]
+plots = [
+    "matplotlib>=3.7",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["whpc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
