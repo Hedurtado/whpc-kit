@@ -6,24 +6,27 @@
   "focus": [
     "explain_ocmmwhpc_decisions",
     "explanation_summary",
-    "robustness_metrics"
+    "robustness_metrics",
+    "frozen M5 companion-checkout orchestration"
   ],
-  "supported_modes": ["smoke"],
-  "planned_modes": ["full"],
+  "supported_modes": ["smoke", "full"],
   "smoke_command": "python3 reproducibility/fp5_trustworthy.py --mode smoke",
-  "full_command": "pending",
+  "full_command": "python3 reproducibility/fp5_trustworthy.py --mode full --research-root ../W-HPC [--datasets cic-ids2017 unsw-nb15 nsl-kdd]",
   "datasets": {
     "smoke": ["synthetic_one_class_explainability"],
     "full": ["UNSW-NB15", "NSL-KDD", "CIC-IDS2017"]
   },
   "expected_outputs": [
-    "reproducibility/artifacts/fp5_smoke_summary.json"
+    "reproducibility/artifacts/fp5_smoke_summary.json",
+    "reproducibility/artifacts/fp5_full_summary.json"
   ],
   "manuscript_targets": [
     "M5 explanation smoke validation",
-    "M5 robustness metric smoke validation"
+    "M5 robustness metric smoke validation",
+    "M5 frozen Part 9/Part 10 reproduction orchestration against the companion W-HPC checkout"
   ],
   "notes": [
-    "Smoke mode validates explainability and perturbation utilities without external datasets."
+    "Smoke mode validates explainability and perturbation utilities without external datasets.",
+    "Full mode replays the frozen M5 protocol by orchestrating the exact Part 9 and Part 10 scripts from a local companion checkout at ../W-HPC; external robustness baselines are optional and SHAP/LIME stays outside the default runner."
   ]
 }
