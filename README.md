@@ -8,7 +8,7 @@ The research repository keeps manuscripts, exploratory experiments, local result
 
 1. Package the W-HPC model family as reusable Python software.
 2. Provide a scikit-learn-like API for supervised, multimodal, one-class, adaptive, online, drift-aware, open-world, uncertainty/querying, explainability, and robustness workflows.
-3. Provide reproducibility manifests and smoke commands for M1-M5 without embedding private/local datasets.
+3. Provide reproducibility manifests, smoke commands, and manuscript-level full entry points for M1-M5 without embedding datasets in the public repository.
 4. Keep examples and tests small enough for public CI.
 5. Add model selection and report/model-card utilities before v1.0.
 6. Use Apache License 2.0 for public release.
@@ -27,6 +27,7 @@ docs/PRODUCT_ROADMAP.md
 docs/API_NAMING_PROPOSAL.md
 docs/GETTING_STARTED.md
 docs/RELEASE_CHECKLIST_v0.1.md
+docs/RELEASE_CHECKLIST_v1.0.md
 ```
 
 ## Product Direction
@@ -121,7 +122,7 @@ python3 reproducibility/fp4_openworld_uncertainty.py --mode smoke
 python3 reproducibility/fp5_trustworthy.py --mode smoke
 ```
 
-Dataset-backed reproduction currently available for FP1 and FP2:
+Dataset-backed reproduction currently available for FP1-FP5:
 
 ```bash
 python3 reproducibility/fp1_supervised_mm.py --mode full \
@@ -132,12 +133,22 @@ python3 reproducibility/fp2_oneclass_adaptive.py --mode full \
   --unsw-raw-dir ../W-HPC/data/raw \
   --nsl-raw-dir ../W-HPC/data/raw/archive \
   --cic-raw-dir ../W-HPC/data/raw/CIC-IDS2017
+
+python3 reproducibility/fp3_online_drift.py --mode full \
+  --research-root ../W-HPC
+
+python3 reproducibility/fp4_openworld_uncertainty.py --mode full \
+  --research-root ../W-HPC
+
+python3 reproducibility/fp5_trustworthy.py --mode full \
+  --research-root ../W-HPC
 ```
 
 These commands write JSON summaries plus validation/test CSV files under `reproducibility/artifacts/`.
 
 By default, `reproducibility/fp1_supervised_mm.py --mode full` reproduces the frozen M1 MM-WHPC protocol rather than an exploratory multimodal sweep.
 By default, `reproducibility/fp2_oneclass_adaptive.py --mode full` reproduces the frozen M2 protocol and compares current reruns against the published M2 table values stored in `reproducibility/reference/m2_published_reference.json`.
+By default, `reproducibility/fp3_online_drift.py`, `fp4_openworld_uncertainty.py`, and `fp5_trustworthy.py` orchestrate the frozen M3-M5 experiment scripts from a companion `../W-HPC` checkout to keep the manuscript-level protocol exact while the public package remains lightweight.
 
 Current FP2 status:
 
@@ -145,9 +156,15 @@ Current FP2 status:
 2. NSL-KDD is aligned with a small drift on the fixed frozen Part 4 row.
 3. CIC-IDS2017 keeps an explicit distinction between published M2 values and current recomputed values from the research checkout.
 
+Current FP3-FP5 status:
+
+1. smoke runners are self-contained and validate the public package utilities directly;
+2. full runners produce `whpc-kit` artifact summaries while delegating the exact frozen paper protocol to the companion `W-HPC` checkout;
+3. this keeps the public repository small and honest while still exposing a reproducible bridge to M3-M5.
+
 ## Selector Scope
 
-`WHPCSelector` should be interpreted as a lightweight recommendation helper in `v0.1`, not as a validated automatic model-selection layer. It is useful for orienting users toward a plausible W-HPC family member, but the final choice must still be confirmed with dataset-specific validation and the relevant reproduction protocol.
+`WHPCSelector` should be interpreted as a lightweight recommendation helper in `v1.0.0`, not as a validated automatic model-selection layer. It is useful for orienting users toward a plausible W-HPC family member, but the final choice must still be confirmed with dataset-specific validation and the relevant reproduction protocol.
 
 ## License
 

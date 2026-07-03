@@ -73,4 +73,17 @@ python3 reproducibility/fp4_openworld_uncertainty.py --mode smoke
 python3 reproducibility/fp5_trustworthy.py --mode smoke
 ```
 
-Full dataset-backed reproduction for M1 and M2 is documented in the manifests and remains a follow-up task.
+Full dataset-backed reproduction for M1-M5 is documented in the manifests.
+
+Current split:
+
+1. `FP1` and `FP2` run natively inside `whpc-kit`.
+2. `FP3`, `FP4`, and `FP5` currently orchestrate the frozen paper scripts from a companion checkout at `../W-HPC`.
+
+Examples:
+
+```bash
+python3 reproducibility/fp3_online_drift.py --mode full --research-root ../W-HPC
+python3 reproducibility/fp4_openworld_uncertainty.py --mode full --research-root ../W-HPC
+python3 reproducibility/fp5_trustworthy.py --mode full --research-root ../W-HPC
+```

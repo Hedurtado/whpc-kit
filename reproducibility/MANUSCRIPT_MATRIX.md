@@ -23,6 +23,11 @@ This matrix defines what `whpc-kit` must eventually support for each W-HPC manus
 
 Smoke commands must run without private/local datasets. Full commands may require users to place external datasets under `data/`, but the repo must document expected paths and should fail with clear messages when data is missing.
 
+Current implementation split:
+
+1. FP1-FP2 full mode runs natively inside `whpc-kit`.
+2. FP3-FP5 full mode currently orchestrate the frozen companion checkout at `../W-HPC` so the manuscript protocol remains exact without copying large experimental scaffolding into the public repository.
+
 ## What Should Stay Out
 
 1. Raw datasets.

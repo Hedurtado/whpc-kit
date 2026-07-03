@@ -50,6 +50,12 @@ Each entry point should eventually support:
 3. result schema validation;
 4. explicit links to the manuscript tables and figures it supports.
 
+Current status:
+
+1. `FP1` and `FP2` already have native full modes inside `whpc-kit`.
+2. `FP3`, `FP4`, and `FP5` expose full modes through companion-checkout orchestration of the frozen manuscript scripts in `../W-HPC`.
+3. This split is intentional for v1.0: the public package stays compact, while exact manuscript replay remains available.
+
 ### 3. Optional CLI
 
 A command-line interface can be useful, but it should not be a priority before the Python API is stable.
