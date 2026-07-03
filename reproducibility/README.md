@@ -1,15 +1,17 @@
 # Reproducibility
 
-This directory contains manuscript-level reproduction units for `whpc-kit`.
+This directory contains paper-aligned reproduction units for `whpc-kit`.
 
 ## Current Status
 
 The repository currently provides:
 
-1. smoke scripts for FP1-M5;
+1. smoke scripts for `FP1` through `FP5`;
 2. native full dataset-backed entry points for FP1/M1 and FP2/M2;
 3. companion-checkout full orchestration entry points for FP3/M3, FP4/M4, and FP5/M5;
 4. JSON manifests describing scope, supported modes, expected datasets, and expected outputs.
+
+For a compact paper-to-command map, see [`REPRODUCIBILITY_MATRIX.md`](REPRODUCIBILITY_MATRIX.md).
 
 Current entry points:
 
@@ -104,14 +106,14 @@ Current alignment note:
 
 ## Design Rules
 
-Each manuscript unit should eventually define:
+Each paper-aligned unit should eventually define:
 
 1. smoke mode;
 2. full mode;
 3. expected datasets;
 4. output files;
 5. output schemas;
-6. manuscript tables/figures supported by the outputs.
+6. paper tables/figures supported by the outputs.
 
 Smoke mode must work without private datasets. Full mode may require public datasets placed locally according to the manifest.
 For CIC-IDS2017 full-mode runs, install the `repro` extra so parquet readers are available.

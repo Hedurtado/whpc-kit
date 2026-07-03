@@ -1,7 +1,19 @@
 # whpc-kit
 
+[![CI](https://github.com/Hedurtado/whpc-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/Hedurtado/whpc-kit/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Hedurtado/whpc-kit)](https://github.com/Hedurtado/whpc-kit/releases)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
+
 `whpc-kit` is the public software and reproducibility repository for the W-HPC research line.
 It packages the core models behind a Python API and exposes a clean bridge to the manuscript results without shipping datasets, drafts, or large research artifacts.
+
+## At A Glance
+
+1. Python package: reusable W-HPC models and utilities under `src/whpc/`.
+2. Public verification: tests, examples, and smoke reproducibility scripts.
+3. Manuscript bridge: `FP1-FP5` entry points aligned to the W-HPC paper line.
+4. Public boundary: no raw datasets, drafts, or large local research outputs.
 
 ## What It Provides
 
@@ -117,12 +129,15 @@ docs/                user-facing project documentation
 Start with:
 
 ```text
+CONTRIBUTING.md
+docs/README.md
 docs/GETTING_STARTED.md
 docs/SCOPE.md
 docs/REPRODUCIBILITY_NOTES.md
 docs/PRODUCT_ROADMAP.md
-docs/API_NAMING_PROPOSAL.md
+docs/API_NAMING.md
 reproducibility/README.md
+reproducibility/REPRODUCIBILITY_MATRIX.md
 ```
 
 ## Roadmap

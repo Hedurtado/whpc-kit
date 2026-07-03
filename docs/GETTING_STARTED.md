@@ -73,7 +73,7 @@ python3 reproducibility/fp4_openworld_uncertainty.py --mode smoke
 python3 reproducibility/fp5_trustworthy.py --mode smoke
 ```
 
-Full dataset-backed reproduction for M1-M5 is documented in the manifests.
+Full dataset-backed reproduction for all five paper groups is documented in the manifests and in [`reproducibility/README.md`](../reproducibility/README.md).
 
 Current split:
 

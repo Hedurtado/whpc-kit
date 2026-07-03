@@ -1,6 +1,6 @@
-# API Naming Proposal
+# API Naming Guide
 
-This proposal defines the target public names for `whpc-kit`. It does not require immediate renaming of the imported research code; aliases can be introduced gradually to preserve compatibility.
+This guide defines the target public names for `whpc-kit`. It does not require immediate renaming of the imported research code; aliases can be introduced gradually to preserve compatibility.
 
 ## Naming Principles
 
@@ -72,4 +72,4 @@ Implementation can accept both manuscript-style aliases and explicit names, but 
 
 Use detector names for one-class, open-world, uncertainty, active-querying, and drift-aware estimators. This is clearer for intrusion-detection users because these models often output anomaly/unknown/reject decisions rather than ordinary multiclass labels.
 
-`WHPCSelector` should remain explicitly advisory in `v0.1`: it can expose scenario-driven heuristics and explanatory reasons, but it should not be presented as a substitute for empirical model selection on a target dataset.
+`WHPCSelector` should remain explicitly advisory in `v1.0.0`: it can expose scenario-driven heuristics and explanatory reasons, but it should not be presented as a substitute for empirical model selection on a target dataset.

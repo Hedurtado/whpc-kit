@@ -66,7 +66,7 @@ Deliverables:
 1. stable public API;
 2. model selector;
 3. model cards or reports;
-4. reproducibility manifests for M1-M5;
+4. reproducibility manifests for the five paper groups;
 5. complete documentation;
 6. maintenance and versioning policy;
 7. CI-ready tests;

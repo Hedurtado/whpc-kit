@@ -113,7 +113,7 @@ Potential functions:
 10. IDS/SIEM integration;
 11. users, projects, and governance.
 
-This layer should remain out of scope for the open-source v1.0 unless a specific reason appears later.
+This layer should remain out of scope for the open-source core unless a specific reason appears later.
 
 ## Model Scope
 
@@ -138,7 +138,7 @@ Names may be refined during implementation, but the public API should be consist
 
 ## Architecture Target
 
-The canvas proposes a modular package. For the standalone repository, the practical target is:
+The package is organized around a modular architecture. The practical target is:
 
 ```text
 src/whpc/
@@ -217,9 +217,9 @@ Each FP/manuscript reproduction unit should define:
 7. expected metrics or tolerances where appropriate;
 8. manuscript tables/figures supported by the outputs.
 
-## Public Release Constraints
+## Public Repository Rules
 
-Before public release:
+For the public repository:
 
 1. confirm Apache 2.0 is acceptable for the project;
 2. review university/institutional intellectual-property rules;
@@ -229,7 +229,7 @@ Before public release:
 6. document dataset acquisition instead of redistributing datasets;
 7. include tests and maintenance/versioning policy.
 
-## Non-Goals Before v1.0
+## Non-Goals
 
 1. Do not build WHPC Studio before the Python API is stable.
 2. Do not prioritize CLI unless it becomes necessary for reproducibility.
