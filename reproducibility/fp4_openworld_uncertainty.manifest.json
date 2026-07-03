@@ -1,0 +1,29 @@
+{
+  "id": "fp4_openworld_uncertainty",
+  "manuscript": "M4",
+  "parts": [7, 8],
+  "version_scope": "v0.3",
+  "focus": [
+    "OpenWorldWHPCDetector",
+    "query_candidate_mask",
+    "compute_feedback_metrics"
+  ],
+  "supported_modes": ["smoke"],
+  "planned_modes": ["full"],
+  "smoke_command": "python3 reproducibility/fp4_openworld_uncertainty.py --mode smoke",
+  "full_command": "pending",
+  "datasets": {
+    "smoke": ["synthetic_open_world_block"],
+    "full": ["UNSW-NB15", "NSL-KDD", "CIC-IDS2017"]
+  },
+  "expected_outputs": [
+    "reproducibility/artifacts/fp4_smoke_summary.json"
+  ],
+  "manuscript_targets": [
+    "M4 open-world rejection smoke validation",
+    "M4 querying and feedback utility smoke validation"
+  ],
+  "notes": [
+    "Smoke mode validates support, open-world metrics, and querying logic on synthetic examples."
+  ]
+}

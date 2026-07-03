@@ -1,0 +1,92 @@
+{
+  "source": "Published M2 tables",
+  "datasets": {
+    "unsw-nb15": {
+      "part3": {
+        "ocwhpc_baseline": {
+          "standard_f1_anomalous": 0.7581,
+          "unseen_f1_anomalous": 0.3043
+        },
+        "frozen_ocmmwhpc": {
+          "standard_f1_anomalous": 0.8096,
+          "unseen_f1_anomalous": 0.3480
+        }
+      },
+      "part4": {
+        "ocwhpc_baseline": {
+          "selected_m_mean": 1.0,
+          "f1_anomalous_mean": 0.3013,
+          "balanced_accuracy_mean": 0.6420
+        },
+        "frozen_ocmmwhpc": {
+          "selected_m_mean": 1.0,
+          "f1_anomalous_mean": 0.3474,
+          "balanced_accuracy_mean": 0.7389
+        },
+        "adaptive_ocmmwhpc": {
+          "selected_m_mean": 1.0,
+          "f1_anomalous_mean": 0.3474,
+          "balanced_accuracy_mean": 0.7389
+        }
+      }
+    },
+    "nsl-kdd": {
+      "part3": {
+        "ocwhpc_baseline": {
+          "standard_f1_anomalous": 0.7730,
+          "unseen_f1_anomalous": 0.6565
+        },
+        "frozen_ocmmwhpc": {
+          "standard_f1_anomalous": 0.8229,
+          "unseen_f1_anomalous": 0.8117
+        }
+      },
+      "part4": {
+        "ocwhpc_baseline": {
+          "selected_m_mean": 1.0,
+          "f1_anomalous_mean": 0.6803,
+          "balanced_accuracy_mean": 0.7712
+        },
+        "frozen_ocmmwhpc": {
+          "selected_m_mean": 2.0,
+          "f1_anomalous_mean": 0.8133,
+          "balanced_accuracy_mean": 0.8528
+        },
+        "adaptive_ocmmwhpc": {
+          "selected_m_mean": 3.0,
+          "f1_anomalous_mean": 0.8284,
+          "balanced_accuracy_mean": 0.8687
+        }
+      }
+    },
+    "cic-ids2017": {
+      "part3": {
+        "ocwhpc_baseline": {
+          "standard_f1_anomalous": 0.8165,
+          "unseen_f1_anomalous": 0.0009
+        },
+        "frozen_ocmmwhpc": {
+          "standard_f1_anomalous": 0.8678,
+          "unseen_f1_anomalous": 0.1489
+        }
+      },
+      "part4": {
+        "ocwhpc_baseline": {
+          "selected_m_mean": 1.0,
+          "f1_anomalous_mean": 0.0013,
+          "balanced_accuracy_mean": 0.3909
+        },
+        "frozen_ocmmwhpc": {
+          "selected_m_mean": 5.0,
+          "f1_anomalous_mean": 0.1298,
+          "balanced_accuracy_mean": 0.7103
+        },
+        "adaptive_ocmmwhpc": {
+          "selected_m_mean": 4.0,
+          "f1_anomalous_mean": 0.1421,
+          "balanced_accuracy_mean": 0.8579
+        }
+      }
+    }
+  }
+}

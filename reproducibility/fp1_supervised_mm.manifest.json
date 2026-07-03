@@ -1,0 +1,33 @@
+{
+  "id": "fp1_supervised_mm",
+  "manuscript": "M1",
+  "parts": [1, 2],
+  "version_scope": "v0.1",
+  "focus": [
+    "WHPCClassifier",
+    "MMWHPCClassifier"
+  ],
+  "supported_modes": ["smoke", "full"],
+  "planned_modes": [],
+  "smoke_command": "python3 reproducibility/fp1_supervised_mm.py --mode smoke",
+  "full_command": "python3 reproducibility/fp1_supervised_mm.py --mode full --unsw-raw-dir <path> --nsl-raw-dir <path>",
+  "datasets": {
+    "smoke": ["synthetic_axis", "synthetic_bimodal"],
+    "full": ["UNSW-NB15", "NSL-KDD"]
+  },
+  "expected_outputs": [
+    "reproducibility/artifacts/fp1_smoke_summary.json",
+    "reproducibility/artifacts/fp1_full_summary.json",
+    "reproducibility/artifacts/fp1_full_validation.csv",
+    "reproducibility/artifacts/fp1_full_test.csv"
+  ],
+  "manuscript_targets": [
+    "M1 supervised W-HPC baseline validation",
+    "M1 multimodal W-HPC smoke validation"
+  ],
+  "notes": [
+    "Smoke mode validates package behavior without local datasets.",
+    "Full mode runs dataset-backed FP1 validation and test protocols for W-HPC and the frozen M1 MM-WHPC package.",
+    "The default MM-WHPC full protocol matches the manuscript freeze: uniform local weights, max aggregation, symmetric M search over {1,2,3,4,5}, inner validation on the official training split, and refit on the full official training split."
+  ]
+}

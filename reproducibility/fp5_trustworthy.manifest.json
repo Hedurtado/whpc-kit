@@ -1,0 +1,29 @@
+{
+  "id": "fp5_trustworthy",
+  "manuscript": "M5",
+  "parts": [9, 10],
+  "version_scope": "v0.4",
+  "focus": [
+    "explain_ocmmwhpc_decisions",
+    "explanation_summary",
+    "robustness_metrics"
+  ],
+  "supported_modes": ["smoke"],
+  "planned_modes": ["full"],
+  "smoke_command": "python3 reproducibility/fp5_trustworthy.py --mode smoke",
+  "full_command": "pending",
+  "datasets": {
+    "smoke": ["synthetic_one_class_explainability"],
+    "full": ["UNSW-NB15", "NSL-KDD", "CIC-IDS2017"]
+  },
+  "expected_outputs": [
+    "reproducibility/artifacts/fp5_smoke_summary.json"
+  ],
+  "manuscript_targets": [
+    "M5 explanation smoke validation",
+    "M5 robustness metric smoke validation"
+  ],
+  "notes": [
+    "Smoke mode validates explainability and perturbation utilities without external datasets."
+  ]
+}

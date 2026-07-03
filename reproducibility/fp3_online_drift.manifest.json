@@ -1,0 +1,28 @@
+{
+  "id": "fp3_online_drift",
+  "manuscript": "M3",
+  "parts": [5, 6],
+  "version_scope": "v0.2",
+  "focus": [
+    "compute_block_drift_signals",
+    "evaluate_drift_alarm"
+  ],
+  "supported_modes": ["smoke"],
+  "planned_modes": ["full"],
+  "smoke_command": "python3 reproducibility/fp3_online_drift.py --mode smoke",
+  "full_command": "pending",
+  "datasets": {
+    "smoke": ["synthetic_stream_block"],
+    "full": ["CIC-IDS2017", "UNSW-NB15", "NSL-KDD"]
+  },
+  "expected_outputs": [
+    "reproducibility/artifacts/fp3_smoke_summary.json"
+  ],
+  "manuscript_targets": [
+    "M3 drift signal computation smoke validation",
+    "M3 drift alarm logic smoke validation"
+  ],
+  "notes": [
+    "Smoke mode validates the drift-monitoring core without dataset-backed streaming protocols."
+  ]
+}

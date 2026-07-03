@@ -1,0 +1,34 @@
+{
+  "id": "fp2_oneclass_adaptive",
+  "manuscript": "M2",
+  "parts": [3, 4],
+  "version_scope": "v0.1",
+  "focus": [
+    "OCMMWHPCDetector",
+    "AdaptiveOCMMWHPCDetector"
+  ],
+  "supported_modes": ["smoke", "full"],
+  "planned_modes": [],
+  "smoke_command": "python3 reproducibility/fp2_oneclass_adaptive.py --mode smoke",
+  "full_command": "python3 reproducibility/fp2_oneclass_adaptive.py --mode full --unsw-raw-dir <path> --nsl-raw-dir <path> --cic-raw-dir <path> [--m2-final-thresholds <path>] [--m2-published-reference <path>]",
+  "datasets": {
+    "smoke": ["synthetic_normal_only", "synthetic_validation"],
+    "full": ["UNSW-NB15", "NSL-KDD", "CIC-IDS2017"]
+  },
+  "expected_outputs": [
+    "reproducibility/artifacts/fp2_smoke_summary.json",
+    "reproducibility/artifacts/fp2_full_summary.json",
+    "reproducibility/artifacts/fp2_full_validation.csv",
+    "reproducibility/artifacts/fp2_full_test.csv"
+  ],
+  "manuscript_targets": [
+    "M2 one-class threshold calibration smoke validation",
+    "M2 adaptive structure selection smoke validation"
+  ],
+  "notes": [
+    "Smoke mode exercises one-class and adaptive APIs with synthetic data.",
+    "Full mode runs dataset-backed one-class selection and adaptive comparison for FP2.",
+    "Full-mode summaries compare the current rerun against the published M2 values via the reference_alignment block.",
+    "CIC-IDS2017 should be interpreted with the explicit published-freeze versus recomputed-checkout distinction."
+  ]
+}
