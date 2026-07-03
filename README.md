@@ -151,6 +151,39 @@ reproducibility/REPRODUCIBILITY_MATRIX.md
 | v1.0 | Stable API, docs, reproducibility manifests, selector, reports, release-ready package |
 | post-v1.0 | Software paper, optional CLI, community GUI, advanced product planning |
 
+## Authors
+
+`whpc-kit` is part of the W-HPC research and software line developed by:
+
+<p>
+  <a href="https://github.com/Hedurtado">
+    <img src="https://github.com/Hedurtado.png" width="80" alt="Edwin Hurtado-Almeida" />
+  </a>
+  <a href="https://github.com/Yomsina">
+    <img src="https://github.com/Yomsina.png" width="80" alt="Jhon Duta" />
+  </a>
+  <a href="https://github.com/xMane13">
+    <img src="https://github.com/xMane13.png" width="80" alt="Manuel Muñoz" />
+  </a>
+</p>
+
+1. [Edwin Hurtado-Almeida](https://github.com/Hedurtado)
+2. [Jhon Duta](https://github.com/Yomsina)
+3. Luis Arteaga
+4. [Manuel Muñoz](https://github.com/xMane13)
+
+## Maintainers
+
+Current repository maintenance and releases are led by:
+
+<p>
+  <a href="https://github.com/Hedurtado">
+    <img src="https://github.com/Hedurtado.png" width="80" alt="Edwin Hurtado-Almeida" />
+  </a>
+</p>
+
+1. [Edwin Hurtado-Almeida](https://github.com/Hedurtado)
+
 ## License
 
 Apache License 2.0. See [LICENSE](LICENSE).
