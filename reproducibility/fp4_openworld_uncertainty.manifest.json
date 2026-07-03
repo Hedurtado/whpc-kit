@@ -6,24 +6,27 @@
   "focus": [
     "OpenWorldWHPCDetector",
     "query_candidate_mask",
-    "compute_feedback_metrics"
+    "compute_feedback_metrics",
+    "frozen M4 companion-checkout orchestration"
   ],
-  "supported_modes": ["smoke"],
-  "planned_modes": ["full"],
+  "supported_modes": ["smoke", "full"],
   "smoke_command": "python3 reproducibility/fp4_openworld_uncertainty.py --mode smoke",
-  "full_command": "pending",
+  "full_command": "python3 reproducibility/fp4_openworld_uncertainty.py --mode full --research-root ../W-HPC [--datasets cic-ids2017 unsw-nb15 nsl-kdd]",
   "datasets": {
     "smoke": ["synthetic_open_world_block"],
     "full": ["UNSW-NB15", "NSL-KDD", "CIC-IDS2017"]
   },
   "expected_outputs": [
-    "reproducibility/artifacts/fp4_smoke_summary.json"
+    "reproducibility/artifacts/fp4_smoke_summary.json",
+    "reproducibility/artifacts/fp4_full_summary.json"
   ],
   "manuscript_targets": [
     "M4 open-world rejection smoke validation",
-    "M4 querying and feedback utility smoke validation"
+    "M4 querying and feedback utility smoke validation",
+    "M4 frozen Part 7/Part 8 reproduction orchestration against the companion W-HPC checkout"
   ],
   "notes": [
-    "Smoke mode validates support, open-world metrics, and querying logic on synthetic examples."
+    "Smoke mode validates support, open-world metrics, and querying logic on synthetic examples.",
+    "Full mode replays the frozen M4 protocol by orchestrating the exact Part 7, Part 8 feedback, and Part 8 guarded-retraining scripts from a local companion checkout at ../W-HPC."
   ]
 }
